@@ -31,6 +31,14 @@
     color:white;
     background-color: transparent;
   }
+  .input_General:hover{
+    cursor:pointer;
+    border: solid 2px rgb(121, 80, 155);
+    transition: 100ms
+  }
+  .input_General::selection{
+    border: solid 2px rgb(121, 80, 155);
+  }
   .formButton{
     color:white;
     background-color:  rgb(77, 31, 113);
@@ -39,4 +47,11 @@
     padding-block:1rem;
     font-size:1rem;
     cursor:pointer;
+    font-family: "Raleway";
+    font-weight:bold;
+
+  }
+  .formButton:hover{
+    background-color:  rgb(121, 80, 155);
+    transition: 100ms
   }

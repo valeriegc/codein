@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+.profilePageContainer {
+    background-color: rgb(232, 227, 253);
+    padding-top:10rem;
+    display:flex;
+    flex-direction: row;
+    font-family:"Raleway";
+    color: rgb(77, 31, 113)
+}
+.profileBox{
+    background-color: whitesmoke;
+    height: 25rem;
+    overflow:hidden;
+    width:45rem;
+    margin-left: 6rem;
+    border-radius:10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.backgroundPicBox {
+    background-color: rgba(77, 31, 113);
+    height: 40%;
+    position:relative;
+}
+.profilePicBox {
+    position: absolute;
+    left:2rem;
+    top:4rem;
+    height: 10rem;
+    width:10rem;
+    border: 8px white solid;
+    border-radius: 100%;
+    background-color: lightgray;
+    overflow:hidden;
+}
+.personHead{
+    position:absolute;
+    border-radius:100%;
+    background-color: white;
+    height: 4rem;
+    width: 4rem;
+    top:2rem;
+    left:3rem;
+}
+.personBody{
+    position:absolute;
+    width:10rem;
+    height:5rem;
+    background-color:white;
+    border-radius:100%;
+    top:6rem;
+}
+
+.friendContainer {
+    background-color: white;
+    margin-left: 2rem;
+    border-radius: 10px;
+    width: 30rem;
+    height: 45rem;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    margin-bottom: 2rem;
+}
+
+.connectionHeader{
+    margin-inline: 2rem;
+}
+.connectCardWrap {
+    height: 6rem;
+    width: 25rem;
+    border: 2px solid rgba(77, 31, 113);
+    border-radius:10px;
+    margin: 2rem;
+}

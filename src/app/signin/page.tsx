@@ -12,7 +12,7 @@ export default function singIn(){
     <label>Password</label>
     <input type="password" className={styles.input_General}></input>
     <button className={styles.formButton}>Submit</button>
-    <p>No account yet? Sign up here.</p>
+    <p className={styles.personDetails}>No account yet? Sign up here.</p>
     </div>
     </form>
     </div>
