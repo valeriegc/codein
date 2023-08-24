@@ -1,0 +1,40 @@
+.connectCardWrap {
+    width: 25rem;
+    height: 6rem;
+    border: 2px solid rgb(232, 227, 253);
+    border-radius:10px;
+    margin: 2rem;
+    margin-top:0;
+    padding:1rem;
+    display:flex;
+    flex-direction:row;
+    gap:1rem;
+    position:relative;
+}
+.connectPic{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    border: solid 2px rgb(232, 227, 253);
+}
+.connectBtn {
+    height: 1.5rem;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(232, 227, 253);
+    border:none;
+    padding-inline:1rem;
+    cursor:pointer;
+    position:absolute;
+    right: 1rem;
+    bottom: 1rem;
+}
+.connectDetails{
+    width:60%;
+}
+.connectName{
+    font-weight: bold;
+    cursor:pointer;
+    margin-bottom: 0.5rem;
+    
+}

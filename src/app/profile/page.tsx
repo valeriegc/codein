@@ -1,5 +1,5 @@
 import styles from "./Profile.module.css"
-import ConnectionBox from "./(components)/friendBox"
+import ConnectionBox from "./(components)/connectionBox"
 import ProfileBox from "./(components)/profileBox"
 import ConnectCard from "./(components)/connectionCard"
 
