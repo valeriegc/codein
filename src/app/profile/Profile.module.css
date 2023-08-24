@@ -1,7 +1,6 @@
 
 .profilePageContainer {
     background-color: rgb(232, 227, 253);
-    padding-top:10rem;
     display:flex;
     flex-direction: row;
     font-family:"Raleway";
