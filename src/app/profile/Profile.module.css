@@ -24,9 +24,9 @@
 .profilePicBox {
     position: absolute;
     left:2rem;
-    top:4rem;
-    height: 10rem;
-    width:10rem;
+    top:5rem;
+    height:7rem;
+    width:7rem;
     border: 8px white solid;
     border-radius: 100%;
     background-color: lightgray;
@@ -36,18 +36,28 @@
     position:absolute;
     border-radius:100%;
     background-color: white;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     top:2rem;
-    left:3rem;
+    left:2rem;
 }
 .personBody{
     position:absolute;
-    width:10rem;
-    height:5rem;
+    width:8rem;
+    height:3rem;
     background-color:white;
     border-radius:100%;
-    top:6rem;
+    top:5rem;
 }
-
-
+.name{
+    color:white;
+    position:absolute;
+    left:12rem;
+    top:5.5rem;
+    font-weight: bold;
+}
+.personalInfo{
+    margin-left: 3rem;
+    margin-top: 4rem;
+    font-weight:bold;
+}

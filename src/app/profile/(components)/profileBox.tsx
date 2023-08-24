@@ -8,5 +8,12 @@ export default function ProfileBox () {
         <div className={styles.personHead}></div>
         <div className={styles.personBody}></div>
     </div>
+    <h1 className={styles.name}>John Doe</h1>
+</div>
+<div className={styles.personalInfo}>
+<p>Currently empoyed or studying at: </p>
+<p>Stack:</p>
+<p>Languages:</p>
+<p>Other interests:</p>
 </div>
 </div>)}
