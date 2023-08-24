@@ -1,5 +1,5 @@
 import styles from "../Profile.module.css"
-
+import { userObject } from "../userInfo"
 export default function ProfileBox () {
     return(
 <div className={styles.profileBox}>
@@ -8,12 +8,12 @@ export default function ProfileBox () {
         <div className={styles.personHead}></div>
         <div className={styles.personBody}></div>
     </div>
-    <h1 className={styles.name}>John Doe</h1>
+    <h1 className={styles.name}>{userObject.Name}</h1>
 </div>
 <div className={styles.personalInfo}>
-<p>Currently empoyed or studying at: </p>
-<p>Stack:</p>
-<p>Languages:</p>
-<p>Other interests:</p>
+<h2>{userObject.Employment} </h2>
+<p>{userObject.Stack}</p>
+<p className={styles.languages}>{userObject.Languages}</p>
+<p className={styles.interests}>{userObject.Interests}</p>
 </div>
 </div>)}
