@@ -7,6 +7,6 @@ export default function ConnectCard(){
       <div className={styles.connectName}>John Smith</div>
       <div className={styles.connectIntro}>Introduction to this persons company and their city possibly</div>
       </div>
-      <button className={styles.connectBtn}>Contact</button>
+      <button className={styles.connectBtn}>+ Contact</button>
    </div>)
 }

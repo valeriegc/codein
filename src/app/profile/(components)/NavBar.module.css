@@ -58,6 +58,7 @@
     font-weight:bold;
     margin-bottom:1.5rem;
     margin-top:0.2rem;
+    cursor:pointer;
 }
 .profileIcon{
     height: 2.75rem;
