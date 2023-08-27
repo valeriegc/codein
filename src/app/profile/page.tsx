@@ -1,10 +1,12 @@
+"use client"
 import styles from "./Profile.module.css"
-import ConnectionBox from "./(components)/connectionBox"
+import ConnectionBox from "./(components)/(connections)/connectionBox"
 import ProfileBox from "./(components)/profileBox"
-import ConnectCard from "./(components)/connectionCard"
+import ConnectCard from "./(components)/(connections)/connectionCard"
 import NavBar from "./(components)/navBar"
-import CvBox from "./(components)/cvBox"
-import EmploymentCard from "./(components)/employmentCard"
+import CvBox from "./(components)/(cv)/cvBox"
+import EmploymentCard from "./(components)/(cv)/employmentCard"
+
 
 export default function ProfilePage(){
     return (

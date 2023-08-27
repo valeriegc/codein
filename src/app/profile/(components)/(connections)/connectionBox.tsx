@@ -1,6 +1,6 @@
 import styles from "./ConnectionBox.module.css"
 import ConnectCard from "./connectionCard";
-import { userObject } from "../userInfo";
+import { userObject } from "../../userInfo";
 
 type connectProps = {
     children: React.ReactNode; 

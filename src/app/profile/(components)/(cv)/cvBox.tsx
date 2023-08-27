@@ -1,6 +1,6 @@
 import styles from "./CvBox.module.css"
 import EmploymentCard from "./employmentCard";
-import { userObject } from "../userInfo";
+import { userObject } from "../../userInfo";
 
 type employmentProps = {
     children: React.ReactNode; 
