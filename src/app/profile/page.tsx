@@ -10,9 +10,9 @@ import EmploymentCard from "./(components)/(cv)/employmentCard"
 
 export default function ProfilePage(){
     return (
-    <div>
+    <div className={styles.pageFrame}>
         <NavBar></NavBar>
-        <div className={styles.profilePageContainer}>
+        <div className={styles.container}>
         <div className={styles.leftContainer}>
         <ProfileBox></ProfileBox>
         <CvBox>

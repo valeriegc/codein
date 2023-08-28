@@ -22,18 +22,18 @@ export default function BGModal({handleBGImg,onClose}){
     }
 
 const ModalContent = (
-    <div className={styles.bgBackground}>
-        <div className={styles.bgModal}>
-            <h3 className={styles.modalHeader}>Edit background picture</h3>
-            <img src="close.png" className={styles.bgClose} onClick={handleClose}></img>
-            <div className={styles.bgPicture}>
+    <div className={styles.background}>
+        <div className={styles.modal}>
+            <h3>Edit background picture</h3>
+            <img src="close.png" className={styles.close} onClick={handleClose}></img>
+            <div className={styles.pic}>
                 {imageLink != "" &&
-                <img className={styles.bgPicture} src={imageLink}></img>}
+                <img className={styles.pic} src={imageLink}></img>}
             </div>
-            <input onChange={handleUpdate} value={inputLink} placeholder="Place a link here" className={styles.bgInput}></input>
+            <input className={styles.input} placeholder="Place a link here" value={inputLink} onChange={handleUpdate}  ></input>
             <div>
-            <button onClick={()=>setImageLink(inputLink)} className={styles.addButton}>Preview image</button>
-            <button onClick={handleImgSave} className={styles.addButton}>Set image</button>
+            <button className={styles.btn} onClick={()=>setImageLink(inputLink)}>Preview image</button>
+            <button className={styles.btn} onClick={handleImgSave} >Set image</button>
             </div>
         </div>
     </div>

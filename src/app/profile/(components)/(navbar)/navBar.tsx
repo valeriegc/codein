@@ -2,10 +2,9 @@ import styles from "./NavBar.module.css"
 
 export default function NavBar(){
     return(
-        <div className={styles.navBarContainer}>
-            <div className={styles.navBarWrap}>
-                <div className={styles.codeInLogo}>CodeIn.</div>
-                <div className={styles.buttonContainer}>
+            <div className={styles.wrap}>
+                <div className={styles.logo}>CodeIn.</div>
+                <div className={styles.btnsWrap}>
                     <div className={styles.iconFrame}>
                     <img className={styles.iconClass}src= "people.png"></img>
                     <p className={styles.iconText}>People</p>
@@ -27,7 +26,6 @@ export default function NavBar(){
                     </div>
                 </div>
             </div>
-        </div>
 
     )
 }

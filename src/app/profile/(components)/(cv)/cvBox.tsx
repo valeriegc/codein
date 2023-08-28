@@ -6,8 +6,8 @@ type employmentProps = {
     children: React.ReactNode; 
   };
 export default function CvBox(props:employmentProps) {
-return(<div className={styles.cvWrap}>
-    <h1 className={styles.cvHeader}>Experience</h1>
+return(<div className={styles.wrap}>
+    <h1 className={styles.header}>Experience</h1>
     <div className={styles.cardFrame}>
   {userObject.Experience.map((user) => (
     <EmploymentCard role={user.EmployerRole} description={user.Description} time={user.Timeframe}></EmploymentCard>

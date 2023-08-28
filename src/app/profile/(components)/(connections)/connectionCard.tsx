@@ -1,12 +1,12 @@
 import styles from "./ConnectionCard.module.css"
 
 export default function ConnectCard({name, company}){
-   return (<div className={styles.connectCardWrap}>
-      <div className={styles.connectPic}></div>
-      <div className={styles.connectDetails}>
-      <div className={styles.connectName}>{name}</div>
-      <div className={styles.connectIntro}>{company}</div>
+   return (<div className={styles.cardWrap}>
+      <div className={styles.pic}></div>
+      <div className={styles.details}>
+      <div className={styles.name}>{name}</div>
+      <div className={styles.intro}>{company}</div>
       </div>
-      <button className={styles.connectBtn}>+ Contact</button>
+      <button className={styles.btn}>+ Contact</button>
    </div>)
 }

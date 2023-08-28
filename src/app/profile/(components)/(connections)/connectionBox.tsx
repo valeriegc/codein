@@ -8,9 +8,9 @@ type connectProps = {
 
 export default function ConnectionBox (props:connectProps) {
     return(
-        <div className={styles.connectionsContainer}>
-            <h1 className={styles.connectionHeaders}>Connections</h1>
-            <div className={styles.cardsContainer}>
+        <div className={styles.container}>
+            <h1 className={styles.header}>Connections</h1>
+            <div className={styles.cardContainer}>
             {userObject.Connections.map((user) => (
             <ConnectCard name={user.Name} company={user.Company}></ConnectCard>))}
             </div>

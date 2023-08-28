@@ -24,15 +24,15 @@ export default function Modal({onClose,handleImg}){
 const ModalContent = (
     <div className={styles.background}>
         <div className={styles.modal}>
-            <h3 className={styles.modalHeader}>Edit picture</h3>
-            <img src="close.png" className={styles.closeButton} onClick={handleClose}></img>
+            <h3>Edit picture</h3>
+            <img src="close.png" className={styles.close} onClick={handleClose}></img>
             <div className={styles.usersPicture}>
-                <img className={styles.usersPicture} src={imageLink}></img>
+                <img src={imageLink} className={styles.usersPicture} ></img>
             </div>
-            <input onChange={handleUpdate} value={inputLink} placeholder="Place a link here" className={styles.linkInput}></input>
+            <input className={styles.input} placeholder="Place a link here" value={inputLink} onChange={handleUpdate} ></input>
             <div>
-            <button onClick={()=>setImageLink(inputLink)} className={styles.addButton}>Preview image</button>
-            <button onClick={handleImgSave} className={styles.addButton}>Set image</button>
+            <button className={styles.btn} onClick={()=>setImageLink(inputLink)} >Preview image</button>
+            <button  className={styles.btn} onClick={handleImgSave}>Set image</button>
             </div>
         </div>
     </div>

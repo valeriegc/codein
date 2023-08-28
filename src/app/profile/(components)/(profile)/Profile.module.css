@@ -1,6 +1,8 @@
-
-.profilePageContainer {
+.pageFrame{
+    padding:2rem;
     background-color: rgb(232, 227, 253);
+}
+.container {
     display:flex;
     flex-direction: row;
     font-family:"Raleway";
@@ -10,21 +12,23 @@
 }
 
 .profileBox{
-    background-color: whitesmoke;
+    background-color: white;
     height: 25rem;
     overflow:hidden;
     width:45rem;
     border-radius:10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    margin-bottom:2rem;
+    position:relative;
 }
 
-.backgroundPicBox {
+.bgPic {
     background-color: rgba(77, 31, 113);
     height: 10rem;
     width:45rem;
     position:relative;
 }
-.profilePicBox {
+.picWrap {
     position: absolute;
     left:2rem;
     top:5rem;
@@ -65,20 +69,20 @@
     font-weight:bold;
 }
 .languages{
-font-weight: 400;
-color:grey
+    font-weight: 400;
+    color:grey
 }
 .interests{
     font-style: italic;
     font-weight: 300;
-color:grey
+    color:grey
 }
 .editImage{
     position:absolute;
     height:2rem;
     width:2rem;
-    left:15.5rem;
-    top: 21rem;
+    left:10rem;
+    top: 11rem;
     cursor:pointer;
 }
 .editBgImage{
@@ -90,7 +94,7 @@ color:grey
     top:7.5rem;
     z-index:5;
 }
-.actualUserPhoto{
+.userPhoto{
     height:7rem;
     width:7rem;
 }

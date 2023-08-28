@@ -23,12 +23,12 @@ export default function ProfileBox () {
     
     return(
     <div className={styles.profileBox}>
-        <div className={styles.backgroundPicBox}>
-            <img className={styles.editBgImage} src="editLight.png" onClick={()=> setOpenBgModal(true)}></img>
+        <div className={styles.bgPic}>
+            <img src="editLight.png"  className={styles.editBgImage} onClick={()=> setOpenBgModal(true)}></img>
             {bgImage !== "" &&
-            <img src={bgImage} className={styles.backgroundPicBox}></img>}
-            <div className={styles.profilePicBox}>
-                <img className={styles.actualUserPhoto} src={profileImage}></img>
+            <img src={bgImage} className={styles.bgPic}></img>}
+            <div className={styles.picWrap}>
+                <img className={styles.userPhoto} src={profileImage}></img>
                 {profileImage =="" &&
                 <div>
                 <div className={styles.personHead}></div>
@@ -37,7 +37,7 @@ export default function ProfileBox () {
             </div>
         <h1 className={styles.name}>{userObject.Name}</h1>
         </div>
-        <img onClick={()=>setOpenModal(true)} src="edit.png" className={styles.editImage}></img>
+        <img src="edit.png" className={styles.editImage} onClick={()=>setOpenModal(true)} ></img>
 {openModal &&
             <Modal handleImg={getImage} onClose={() => setOpenModal(false)}>
             </Modal>
