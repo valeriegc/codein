@@ -1,11 +1,8 @@
 .connectCardWrap {
-    width: 25rem;
-    height: 6rem;
     border: 2px solid rgb(232, 227, 253);
     border-radius:10px;
-    margin: 2rem;
-    margin-top:0;
-    margin-left:0;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
     padding:1rem;
     display:flex;
     flex-direction:row;
@@ -20,15 +17,15 @@
 }
 .connectBtn {
     height: 1.5rem;
-    text-align: center;
-    border-radius: 5px;
-    background-color: rgb(232, 227, 253);
-    border:none;
-    padding-inline:1rem;
-    cursor:pointer;
     position:absolute;
     right: 1rem;
     bottom: 1rem;
+    padding-inline:1rem;
+    border-radius: 5px;
+    background-color: rgb(232, 227, 253);
+    border:none;
+    cursor:pointer;
+
 }
 .connectDetails{
     width:60%;

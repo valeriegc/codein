@@ -1,8 +1,8 @@
 "use client"
-import styles from "../Profile.module.css"
-import { userObject } from "../userInfo"
-import BGModal from "./backGroundModal"
-import Modal from "./modal"
+import styles from "./Profile.module.css"
+import { userObject } from "../../userInfo"
+import BGModal from "../(background)/backGroundModal"
+import Modal from "../(proPicModal)/modal"
 import { useState } from "react"
 
 export default function ProfileBox () {
