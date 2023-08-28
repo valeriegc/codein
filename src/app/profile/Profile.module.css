@@ -18,7 +18,8 @@
 
 .backgroundPicBox {
     background-color: rgba(77, 31, 113);
-    height: 40%;
+    height: 10rem;
+    width:45rem;
     position:relative;
 }
 .profilePicBox {
@@ -77,6 +78,15 @@ color:grey
     left:15.5rem;
     top: 21rem;
     cursor:pointer;
+}
+.editBgImage{
+    position:absolute;
+    height:2rem;
+    width:2rem;
+    cursor:pointer;
+    right:0.75rem;
+    top:7.5rem;
+    z-index:5;
 }
 .actualUserPhoto{
     height:7rem;
