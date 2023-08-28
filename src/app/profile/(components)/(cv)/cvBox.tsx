@@ -1,15 +1,15 @@
 import styles from "./CvBox.module.css"
 import EmploymentCard from "./employmentCard";
-import { userObject } from "../../userInfo";
+import { userObject } from "../../page";
 import { useContext } from "react";
-import { ProfileContext } from "../../profileContext";
+import { EditProfileContext } from "../../profileContext";
 
 type employmentProps = {
     children: React.ReactNode; 
   };
 
 export default function CvBox(props:employmentProps) {
-  const enableEdit = useContext(ProfileContext)
+  const enableEdit = useContext(EditProfileContext)
 
 return(<div className={styles.wrap}>
   {enableEdit &&

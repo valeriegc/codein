@@ -85,6 +85,14 @@
     top: 11rem;
     cursor:pointer;
 }
+.editText {
+    position:absolute;
+    height:2rem;
+    width: 2rem;
+    right:0.75rem;
+    top:14rem;
+    cursor: pointer;
+}
 .editBgImage{
     position:absolute;
     height:2rem;

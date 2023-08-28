@@ -7,7 +7,27 @@ import NavBar from "./(components)/(navbar)/navBar"
 import CvBox from "./(components)/(cv)/cvBox"
 import EmploymentCard from "./(components)/(cv)/employmentCard"
 import React, { useState } from "react"
-import { ProfileContext } from "./profileContext"
+import { EditProfileContext,UserDetailContext } from "./profileContext"
+
+export let userObject = {
+    Name: "Valerie Knape",
+    Connections: [
+      { Name: "Alexander Kolberg", Company: "ProductMind" },
+      { Name: "Natalie Paminger", Company: "Expedia Group" },
+    ],
+    Employment: "Expedia Group",
+    Stack: "Svelte, NextJS, FrontEnd",
+    Languages: "HTML5, CSS, JavaScript, Go",
+    Interests: "Languages, cooking, travelling and color theory",
+    Experience: [
+      {
+        EmployerRole: "Call center Program Associate",
+        Timeframe: "2022-11-2023-05",
+        Description:
+          "Through PowerBi was responsible for maintaining and upgrading the technicalities a company-used online store for employees.",
+      },
+    ],
+  };
 
 export default function ProfilePage(){
     const [editEnable, setEditEnable] = useState(false) 
@@ -23,7 +43,8 @@ export default function ProfilePage(){
         }
     }
     return (
-    <ProfileContext.Provider value={editEnable}>
+    <EditProfileContext.Provider value={editEnable}>
+    <UserDetailContext.Provider value={userObject}>
     <div className={styles.pageFrame}>
     <button onClick={editDemo}>{buttonText}</button>
         <NavBar></NavBar>
@@ -39,5 +60,7 @@ export default function ProfilePage(){
         </ConnectionBox>
         </div>
     </div>
-    </ProfileContext.Provider>
+    </UserDetailContext.Provider>
+    </EditProfileContext.Provider>
+  
 )}

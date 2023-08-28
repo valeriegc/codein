@@ -1,13 +1,14 @@
 "use client"
 import styles from "./Profile.module.css"
-import { userObject } from "../../userInfo"
+import { userObject } from "../../page";
 import BGModal from "../(background)/backGroundModal"
 import Modal from "../(proPicModal)/modal"
 import { useContext, useState } from "react"
-import { ProfileContext } from "../../profileContext"
+import { EditProfileContext } from "../../profileContext"
+import { TextModal } from "../(textModal)/textModal"
 
 export default function ProfileBox () {
-    const editEnable = useContext(ProfileContext)
+    const editEnable = useContext(EditProfileContext)
     const [profileImage, setNewImage] = useState("")
     const [bgImage, setNewBgImage] = useState("")
 
@@ -21,12 +22,15 @@ export default function ProfileBox () {
 
     const [openModal, setOpenModal] = useState(false)
     const [openBgModal, setOpenBgModal] = useState(false)
+    const [openTextModal, setOpenTextModal] = useState(false)
     
     return(
     <div className={styles.profileBox}>
         <div className={styles.bgPic}>
             {editEnable &&
             <img src="editLight.png"  className={styles.editBgImage} onClick={()=> setOpenBgModal(true)}></img>}
+            {editEnable &&
+            <img src="edit.png" className={styles.editText} onClick={()=> setOpenTextModal(true)}></img>}
             {bgImage !== "" &&
             <img src={bgImage} className={styles.bgPic}></img>}
             <div className={styles.picWrap}>
@@ -41,6 +45,8 @@ export default function ProfileBox () {
         </div>
         {editEnable &&
         <img src="edit.png" className={styles.editImage} onClick={()=>setOpenModal(true)} ></img>}
+{openTextModal&&
+    <TextModal onClose={()=>setOpenTextModal(false)}></TextModal>}
 {openModal &&
             <Modal handleImg={getImage} onClose={() => setOpenModal(false)}>
             </Modal>
@@ -54,4 +60,5 @@ export default function ProfileBox () {
                 <p className={styles.languages}>{userObject.Languages}</p>
                 <p className={styles.interests}>{userObject.Interests}</p>
         </div>
+       
 </div>)}

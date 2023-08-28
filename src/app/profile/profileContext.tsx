@@ -1,3 +1,12 @@
-import { createContext } from "react";
+import { createContext, useContext } from "react";
+import { User } from "./(interfaces)/interfaces";
+export const EditProfileContext = createContext<true|false>(false)
+export const UserDetailContext = createContext<User|undefined>(undefined)
 
-export const ProfileContext = createContext<true|false>(false)
+export function useUserDetailContext() {
+    const userObject = useContext(UserDetailContext)
+    if (userObject === undefined){
+        throw new Error("useUserDetailContext must be used with UserDetailContext")
+    }
+    return userObject
+}

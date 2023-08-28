@@ -1,7 +1,7 @@
 import styles from "./ConnectionBox.module.css"
 import ConnectCard from "./connectionCard";
-import { userObject } from "../../userInfo";
-import { ProfileContext } from "../../profileContext";
+import { userObject } from "../../page";
+import { EditProfileContext } from "../../profileContext";
 import { useContext } from "react";
 
 type connectProps = {
@@ -9,7 +9,7 @@ type connectProps = {
   };
 
 export default function ConnectionBox (props:connectProps) {
-    const editEnabled = useContext(ProfileContext)
+    const editEnabled = useContext(EditProfileContext)
 
     return(
         <div className={styles.container}>
