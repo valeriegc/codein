@@ -3,10 +3,11 @@ import styles from "./Profile.module.css"
 import { userObject } from "../../userInfo"
 import BGModal from "../(background)/backGroundModal"
 import Modal from "../(proPicModal)/modal"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { ProfileContext } from "../../profileContext"
 
 export default function ProfileBox () {
-    
+    const editEnable = useContext(ProfileContext)
     const [profileImage, setNewImage] = useState("")
     const [bgImage, setNewBgImage] = useState("")
 
@@ -24,7 +25,8 @@ export default function ProfileBox () {
     return(
     <div className={styles.profileBox}>
         <div className={styles.bgPic}>
-            <img src="editLight.png"  className={styles.editBgImage} onClick={()=> setOpenBgModal(true)}></img>
+            {editEnable &&
+            <img src="editLight.png"  className={styles.editBgImage} onClick={()=> setOpenBgModal(true)}></img>}
             {bgImage !== "" &&
             <img src={bgImage} className={styles.bgPic}></img>}
             <div className={styles.picWrap}>
@@ -37,7 +39,8 @@ export default function ProfileBox () {
             </div>
         <h1 className={styles.name}>{userObject.Name}</h1>
         </div>
-        <img src="edit.png" className={styles.editImage} onClick={()=>setOpenModal(true)} ></img>
+        {editEnable &&
+        <img src="edit.png" className={styles.editImage} onClick={()=>setOpenModal(true)} ></img>}
 {openModal &&
             <Modal handleImg={getImage} onClose={() => setOpenModal(false)}>
             </Modal>

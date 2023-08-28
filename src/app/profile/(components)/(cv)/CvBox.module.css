@@ -7,7 +7,9 @@
     padding-block:1.5rem;
     display:flex;
     flex-direction:column;
+    position:relative;
     }
+
 .header{
         font-weight:400;
         text-align: center;
@@ -15,3 +17,11 @@
 .cardFrame{
         margin-left: 4rem;
     }
+.editIcon{
+    position:absolute;
+    height:2rem;
+    width:2rem;
+    cursor:pointer;  
+    right: 1rem;
+    top:1rem;
+}
