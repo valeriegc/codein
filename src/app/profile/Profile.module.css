@@ -78,3 +78,7 @@ color:grey
     top: 21rem;
     cursor:pointer;
 }
+.actualUserPhoto{
+    height:7rem;
+    width:7rem;
+}

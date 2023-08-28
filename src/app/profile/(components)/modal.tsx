@@ -4,16 +4,21 @@ import ReactDOM from "react-dom";
 import styles from "./Modal.module.css"
 import { useState } from "react";
 
-export default function Modal({onClose}){
+export default function Modal({onClose,handleImg}){
     const handleClose = (e) => {
         e.preventDefault(),
         onClose()
     }
     const [imageLink,setImageLink] = useState("") 
     const [inputLink, setInputLink] = useState("")
-
+    
     const handleUpdate = (event) =>{
     setInputLink(event.target.value)
+    }
+
+    const handleImgSave = (e) => {
+        handleImg(imageLink)
+        handleClose(e)
     }
 
 const ModalContent = (
@@ -27,7 +32,7 @@ const ModalContent = (
             <input onChange={handleUpdate} value={inputLink} placeholder="Place a link here" className={styles.linkInput}></input>
             <div>
             <button onClick={()=>setImageLink(inputLink)} className={styles.addButton}>Preview image</button>
-            <button className={styles.addButton}>Set image</button>
+            <button onClick={handleImgSave} className={styles.addButton}>Set image</button>
             </div>
         </div>
     </div>
