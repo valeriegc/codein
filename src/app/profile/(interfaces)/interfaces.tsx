@@ -8,9 +8,9 @@ export interface User {
     Experience: Experience[]
 }
 export interface Experience {
-    EmployerRole: string,
-    Timeframe: string,
-    Description:string
+    role: string,
+    timeframe: string,
+    description:string
 }
 
 export interface Connection {

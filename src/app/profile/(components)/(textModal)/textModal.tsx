@@ -1,12 +1,12 @@
 import styles from "./TextModal.module.css"
-import React from "react";
+import React, { MouseEvent } from "react";
 import ReactDOM from "react-dom";
 import { useUserDetailContext } from "../../profileContext";
 
 
 export function TextModal({onClose}){
     const userObject = useUserDetailContext()
-    const handleClose = (e) => {
+    const handleClose = (e:MouseEvent<HTMLImageElement>) => {
         e.preventDefault(),
         onClose()
     }

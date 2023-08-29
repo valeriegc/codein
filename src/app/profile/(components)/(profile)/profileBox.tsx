@@ -3,22 +3,23 @@ import styles from "./Profile.module.css"
 import { userObject } from "../../page";
 import BGModal from "../(background)/backGroundModal"
 import Modal from "../(proPicModal)/modal"
-import { useContext, useState } from "react"
+import { Dispatch, SetStateAction, useContext, useState } from "react"
 import { EditProfileContext } from "../../profileContext"
 import { TextModal } from "../(textModal)/textModal"
+
+export interface ImageChange {
+    handleImg : Dispatch<SetStateAction<string>>,
+    onClose: Dispatch<SetStateAction<boolean>>}
+
+export interface BGimageChange {
+    handleBGImg : Dispatch<SetStateAction<string>>,
+    onClose: Dispatch<SetStateAction<boolean>>
+    }
 
 export default function ProfileBox () {
     const editEnable = useContext(EditProfileContext)
     const [profileImage, setNewImage] = useState("")
     const [bgImage, setNewBgImage] = useState("")
-
-    function getImage(imageData) {
-        setNewImage(imageData)
-    }
-
-    function getBgImage(bgData){
-        setNewBgImage(bgData)
-    }
 
     const [openModal, setOpenModal] = useState(false)
     const [openBgModal, setOpenBgModal] = useState(false)
@@ -48,11 +49,11 @@ export default function ProfileBox () {
 {openTextModal&&
     <TextModal onClose={()=>setOpenTextModal(false)}></TextModal>}
 {openModal &&
-            <Modal handleImg={getImage} onClose={() => setOpenModal(false)}>
+            <Modal handleImg={setNewImage} onClose={() => setOpenModal(false)}>
             </Modal>
         }
 {openBgModal &&
-            <BGModal handleBGImg={getBgImage} onClose={()=> setOpenBgModal(false)}></BGModal>
+            <BGModal handleBGImg={setNewBgImage} onClose={()=> setOpenBgModal(false)}></BGModal>
 }
         <div className={styles.personalInfo}>
                 <h2>{userObject.Employment} </h2>
@@ -62,3 +63,4 @@ export default function ProfileBox () {
         </div>
        
 </div>)}
+

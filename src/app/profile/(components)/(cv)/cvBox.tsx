@@ -17,7 +17,7 @@ return(<div className={styles.wrap}>
     <h1 className={styles.header}>Experience</h1>
     <div className={styles.cardFrame}>
   {userObject.Experience.map((user) => (
-    <EmploymentCard role={user.EmployerRole} description={user.Description} time={user.Timeframe}></EmploymentCard>
+    <EmploymentCard role={user.role} description={user.description} timeframe={user.timeframe}></EmploymentCard>
   ))}
     </div>
 </div>)}

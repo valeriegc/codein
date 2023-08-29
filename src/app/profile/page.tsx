@@ -21,16 +21,18 @@ export let userObject = {
     Interests: "Languages, cooking, travelling and color theory",
     Experience: [
       {
-        EmployerRole: "Call center Program Associate",
-        Timeframe: "2022-11-2023-05",
-        Description:
+        role: "Call center Program Associate",
+        timeframe: "2022-11-2023-05",
+        description:
           "Through PowerBi was responsible for maintaining and upgrading the technicalities a company-used online store for employees.",
       },
     ],
   };
 
 export default function ProfilePage(){
+  
     const [editEnable, setEditEnable] = useState(false) 
+
     const [buttonText, setButtonText] = useState("Allow edit")
 
     function editDemo(){

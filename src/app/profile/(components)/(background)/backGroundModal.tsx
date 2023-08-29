@@ -1,22 +1,22 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import styles from "./bgModal.module.css"
-import { useState } from "react";
+import React, { ChangeEvent, MouseEvent, useState, Dispatch, SetStateAction } from "react";
+import ReactDOM from "react-dom";
+import { BGimageChange } from "../(profile)/profileBox";
 
-export default function BGModal({handleBGImg,onClose}){
+export default function BGModal({handleBGImg,onClose}:BGimageChange){
 
-    const handleClose = (e) => {
+    const handleClose = (e:MouseEvent<HTMLImageElement>|MouseEvent<HTMLButtonElement>) => {
         e.preventDefault(),
         onClose()
     }
     const [imageLink,setImageLink] = useState("") 
     const [inputLink, setInputLink] = useState("")
     
-    const handleUpdate = (event) =>{
-    setInputLink(event.target.value)
+    const handleUpdate = (e:ChangeEvent<HTMLInputElement>) =>{
+    setInputLink(e.target.value)
     }
 
-    const handleImgSave = (e) => {
+    const handleImgSave = (e:MouseEvent<HTMLButtonElement>) => {
         handleBGImg(imageLink)
         handleClose(e)
     }

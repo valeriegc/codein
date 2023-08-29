@@ -1,22 +1,23 @@
 "use client"
-import React from "react";
+import React, { ChangeEvent, MouseEvent } from "react";
 import ReactDOM from "react-dom";
 import styles from "./Modal.module.css"
 import { useState } from "react";
+import { imageChange } from "../(profile)/profileBox";
 
-export default function Modal({onClose,handleImg}){
-    const handleClose = (e) => {
+export default function Modal({onClose,handleImg}:imageChange){
+    const handleClose = (e:MouseEvent<HTMLImageElement>|MouseEvent<HTMLButtonElement>) => {
         e.preventDefault(),
         onClose()
     }
     const [imageLink,setImageLink] = useState("") 
     const [inputLink, setInputLink] = useState("")
     
-    const handleUpdate = (event) =>{
-    setInputLink(event.target.value)
+    const handleUpdate = (e:ChangeEvent<HTMLInputElement>) =>{
+    setInputLink(e.target.value)
     }
 
-    const handleImgSave = (e) => {
+    const handleImgSave = (e:MouseEvent<HTMLButtonElement>) => {
         handleImg(imageLink)
         handleClose(e)
     }
