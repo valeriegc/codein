@@ -1,6 +1,6 @@
 "use client"
 import styles from "./Profile.module.css"
-import { userObject } from "../../page";
+import { UserInfoContext, userObject } from "../../page";
 import BGModal from "../(background)/backGroundModal"
 import Modal from "../(proPicModal)/modal"
 import { Dispatch, SetStateAction, useContext, useState } from "react"
@@ -24,7 +24,9 @@ export default function ProfileBox () {
     const [openModal, setOpenModal] = useState(false)
     const [openBgModal, setOpenBgModal] = useState(false)
     const [openTextModal, setOpenTextModal] = useState(false)
-    
+
+    const {userInfo, setUserInfo} = useContext(UserInfoContext)
+
     return(
     <div className={styles.profileBox}>
         <div className={styles.bgPic}>
@@ -42,7 +44,7 @@ export default function ProfileBox () {
                 <div className={styles.personBody}></div>
                 </div>}
             </div>
-        <h1 className={styles.name}>{userObject.Name}</h1>
+        <h1 className={styles.name}>{userInfo.Name}</h1>
         </div>
         {editEnable &&
         <img src="edit.png" className={styles.editImage} onClick={()=>setOpenModal(true)} ></img>}
@@ -56,10 +58,10 @@ export default function ProfileBox () {
             <BGModal handleBGImg={setNewBgImage} onClose={()=> setOpenBgModal(false)}></BGModal>
 }
         <div className={styles.personalInfo}>
-                <h2>{userObject.Employment} </h2>
-                <p>{userObject.Stack}</p>
-                <p className={styles.languages}>{userObject.Languages}</p>
-                <p className={styles.interests}>{userObject.Interests}</p>
+                <h2>{userInfo.Employment} </h2>
+                <p>{userInfo.Stack}</p>
+                <p className={styles.languages}>{userInfo.Languages}</p>
+                <p className={styles.interests}>{userInfo.Interests}</p>
         </div>
        
 </div>)}

@@ -1,16 +1,45 @@
 import styles from "./TextModal.module.css"
-import React, { MouseEvent } from "react";
+import React, { ChangeEvent, MouseEvent, useContext, useState } from "react";
 import ReactDOM from "react-dom";
-import { useUserDetailContext } from "../../profileContext";
-
+import { UserInfoContext } from "../../page";
 
 export function TextModal({onClose}){
-    const userObject = useUserDetailContext()
+
+    const {userInfo, setUserInfo} = useContext(UserInfoContext)
+    const [newUserInfo, setNewUserInfo] = useState({
+        employment: userInfo.Employment,
+        stack: userInfo.Stack,
+        languages: userInfo.Languages,
+        interests: userInfo.Interests
+    })
+
     const handleClose = (e:MouseEvent<HTMLImageElement>) => {
         e.preventDefault(),
         onClose()
     }
 
+    const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setNewUserInfo({
+            ...newUserInfo,
+            [e.target.name]:value
+        }
+        )
+    }
+
+    const updateUser = () => {
+        const newUser = {
+            Name: userInfo.Name,
+            Connections: userInfo.Connections,
+            Employment: newUserInfo.employment,
+            Stack: newUserInfo.stack,
+            Languages: newUserInfo.languages,
+            Interests: newUserInfo.interests,
+            Experience: userInfo.Experience
+        }
+        setUserInfo(newUser)
+        onClose()
+    }
 
 const ModalContent = (
     <div className={styles.background}>
@@ -18,14 +47,14 @@ const ModalContent = (
         <h3>Edit profile information</h3>
         <form className={styles.form}>
         <label>Current employer</label>
-        <input placeholder={userObject.Employment}className={styles.input}></input>
+        <input name="employment" placeholder={userInfo.Employment} className={styles.input} onChange={handleChange}></input>
         <label>Stack</label>
-        <input placeholder={userObject.Stack}className={styles.input}></input>
+        <input name="stack" placeholder={userInfo.Stack}className={styles.input} onChange={handleChange}></input>
         <label>Programming languages</label>
-        <input placeholder={userObject.Languages}className={styles.input}></input>
+        <input name="languages" placeholder={userInfo.Languages}className={styles.input} onChange={handleChange}></input>
         <label>Interests</label>
-        <input placeholder={userObject.Interests}className={styles.input}></input>
-        <button className={styles.formBtn}>Save changes</button>
+        <input name="interests" placeholder={userInfo.Interests}className={styles.input} onChange={handleChange}></input>
+        <button type="button" className={styles.formBtn} onClick={updateUser}>Save changes</button>
         </form>
         <img src="close.png" className={styles.close} onClick={handleClose}></img>
         </div>

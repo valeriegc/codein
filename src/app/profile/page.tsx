@@ -9,6 +9,8 @@ import EmploymentCard from "./(components)/(cv)/employmentCard"
 import React, { useState } from "react"
 import { EditProfileContext} from "./profileContext"
 
+
+
 export let userObject = {
     Name: "Valerie Knape",
     Connections: [
@@ -29,11 +31,21 @@ export let userObject = {
     ],
   };
 
+export const UserInfoContext = React.createContext({
+    userInfo: userObject,
+    setUserInfo: () => {}
+  })
+
 export default function ProfilePage(){
   
-    const [editEnable, setEditEnable] = useState(false) 
+    
+    const [userInfo, setUserInfo] = useState(userObject)
+    const value= {userInfo, setUserInfo}
+
+  
 
     const [buttonText, setButtonText] = useState("Allow edit")
+    const [editEnable, setEditEnable] = useState(false) 
 
     function editDemo(){
         if (!editEnable) {
@@ -46,7 +58,7 @@ export default function ProfilePage(){
     }
     return (
     <EditProfileContext.Provider value={editEnable}>
-    <UserDetailContext.Provider value={userObject}>
+    <UserInfoContext.Provider value={value}>
     <div className={styles.pageFrame}>
     <button onClick={editDemo}>{buttonText}</button>
         <NavBar></NavBar>
@@ -62,7 +74,7 @@ export default function ProfilePage(){
         </ConnectionBox>
         </div>
     </div>
-    </UserDetailContext.Provider>
+    </UserInfoContext.Provider>
     </EditProfileContext.Provider>
   
 )}
