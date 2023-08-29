@@ -7,7 +7,7 @@ import NavBar from "./(components)/(navbar)/navBar"
 import CvBox from "./(components)/(cv)/cvBox"
 import EmploymentCard from "./(components)/(cv)/employmentCard"
 import React, { useState } from "react"
-import { EditProfileContext,UserDetailContext } from "./profileContext"
+import { EditProfileContext} from "./profileContext"
 
 export let userObject = {
     Name: "Valerie Knape",
