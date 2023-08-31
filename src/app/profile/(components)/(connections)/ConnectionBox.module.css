@@ -1,26 +1,26 @@
-.header{
-    font-weight:400;
+.header {
+  font-weight: 400;
 }
 .container {
-    width: 30rem;
-    height: fit-content;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    padding-left: 2rem;
-    position:relative;
+  width: 30rem;
+  height: fit-content;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  padding-left: 2rem;
+  position: relative;
 }
 .cardContainer {
-    height:90%;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .editIcon {
-    position:absolute;
-    height:2rem;
-    width:2rem;
-    cursor:pointer;  
-    right: 1rem;
-    top:1rem;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  right: 1rem;
+  top: 1rem;
 }

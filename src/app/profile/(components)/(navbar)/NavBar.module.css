@@ -1,57 +1,57 @@
-.wrap{
-    width: 90%;
-    background-color:white;
-    border-radius:10px;
-    margin:auto;
-    margin-bottom:2rem;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
-    display:flex;
-    flex-direction:row;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline:3rem;
-    padding-block:1rem;
-    }
+.wrap {
+  width: 90%;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 2rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 3rem;
+  padding-block: 1rem;
+}
 
-.logo{
-    border-radius:10px;
-    color: rgba(77, 31, 113);
-    background-color:  rgb(232, 227, 253);
-    font-weight: bolder;
-    font-size: 2.5rem;
-    padding:0.2rem;
+.logo {
+  border-radius: 10px;
+  color: rgba(77, 31, 113);
+  background-color: rgb(232, 227, 253);
+  font-weight: bolder;
+  font-size: 2.5rem;
+  padding: 0.2rem;
 }
-.btnsWrap{
-    display:flex;
-    flex-direction:row;
-    gap:3rem;
+.btnsWrap {
+  display: flex;
+  flex-direction: row;
+  gap: 3rem;
 }
-.separator{
-    height: 4rem;
-    width:1px;
-    background-color: rgba(77, 31, 113);
-    margin:auto;
+.separator {
+  height: 4rem;
+  width: 1px;
+  background-color: rgba(77, 31, 113);
+  margin: auto;
 }
-.iconFrame{
-    display:flex;
-    flex-direction:column;
-    align-items: center;
-    justify-content: center;
-    margin:auto;
+.iconFrame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 .iconClass {
-    height:2.5rem;
-    width:2.5rem;
+  height: 2.5rem;
+  width: 2.5rem;
 }
-.iconText{
-    color:rgba(77, 31, 113);
-    font-weight:bold;
-    cursor:pointer;
-    margin:0;
-    padding:0;
+.iconText {
+  color: rgba(77, 31, 113);
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
-.profileIcon{
-    height: 2.75rem;
-    width:2.75rem;
-    cursor:pointer;
+.profileIcon {
+  height: 2.75rem;
+  width: 2.75rem;
+  cursor: pointer;
 }

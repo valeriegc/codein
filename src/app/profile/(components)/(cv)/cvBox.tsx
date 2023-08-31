@@ -1,23 +1,29 @@
-import styles from "./CvBox.module.css"
-import EmploymentCard from "./employmentCard";
-import { userObject } from "../../page";
-import { useContext } from "react";
-import { EditProfileContext } from "../../profileContext";
+import styles from './CvBox.module.css'
+import EmploymentCard from './employmentCard'
+import { userObject } from '../../page'
+import { useContext } from 'react'
+import { EditProfileContext } from '../../profileContext'
 
 type employmentProps = {
-    children: React.ReactNode; 
-  };
+  children: React.ReactNode
+}
 
-export default function CvBox(props:employmentProps) {
+export default function CvBox(props: employmentProps) {
   const enableEdit = useContext(EditProfileContext)
 
-return(<div className={styles.wrap}>
-  {enableEdit &&
-    <img src="edit.png" className={styles.editIcon}></img>}
-    <h1 className={styles.header}>Experience</h1>
-    <div className={styles.cardFrame}>
-  {userObject.Experience.map((user) => (
-    <EmploymentCard role={user.role} description={user.description} timeframe={user.timeframe}></EmploymentCard>
-  ))}
+  return (
+    <div className={styles.wrap}>
+      {enableEdit && <img src="edit.png" className={styles.editIcon}></img>}
+      <h1 className={styles.header}>Experience</h1>
+      <div className={styles.cardFrame}>
+        {userObject.Experience.map((user) => (
+          <EmploymentCard
+            role={user.role}
+            description={user.description}
+            timeframe={user.timeframe}
+          ></EmploymentCard>
+        ))}
+      </div>
     </div>
-</div>)}
+  )
+}

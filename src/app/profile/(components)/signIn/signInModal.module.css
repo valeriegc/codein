@@ -1,0 +1,121 @@
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.271);
+    backdrop-filter: blur(3px);
+    position:absolute;
+    top:0;
+    height:100vh;
+    width:100%;
+    z-index:1000;
+  }
+  .modal{
+      background-color: white;
+      border-radius: 10px;
+      padding: 2rem;
+      color: rgba(77, 31, 113);
+      position:relative;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      z-index:1000;
+      width:30rem;
+  }
+  
+  .headline {
+    font-weight:400;
+  }
+  .icon{
+    height:2rem;
+    width:2rem;
+  }
+  .btnProviders {
+    color:white;
+    background-color: rgba(77, 31, 113); 
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size: 1rem;
+    padding:0.75rem;
+  }
+  .btnProvidersReg{
+    color:rgba(77,31,113);
+    background-color: rgba(232,227,253); 
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size: 1rem;
+    padding:0.75rem;
+  }
+  .btnCreateAcc{
+    color:rgba(77,31,113);
+    background-color: rgba(232,227,253);
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
+    padding:0.75rem;
+    margin-top:0.5rem;
+  }
+  .btnRegister{
+    color: rgba(232,227,253);
+    background-color:rgba(77,31,113) ;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:1rem;
+    padding:0.75rem;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+  }
+  .form{
+    display:flex;
+    flex-direction:column;
+    text-align: left;
+    padding-top:1rem;
+  }
+  .label{
+    align-self: flex-starts;
+    font-size:0.75rem;
+  }
+  .input {
+    border: solid 0.5px rgba(77, 31, 113);
+    color:rgba(77, 31, 113);
+    margin-bottom: 0.75rem;
+    margin-top:0.25rem;
+    border-radius:5px;
+    padding:0.3rem;
+  }
+  .inputSI {
+    border: solid 0.5px rgba(77, 31, 113);
+    color:rgba(77, 31, 113);
+    margin-bottom: 0.5rem;
+    margin-top:0.25rem;
+    border-radius:5px;
+    padding:0.5rem;
+  }
+  .input::placeholder{
+    color:rgba(77, 31, 113);
+  }
+  .inputSI::placeholder{
+    color:rgba(77, 31, 113);
+  }
+  .input::hover{
+    border: solid 2px rgba(77, 31, 113)
+
+  }
+  .input::focus{
+    border: solid 1px rgba(77, 31, 113)
+  }
+  .topBox{
+    position:relative
+  }
+  .backIcon {
+    position:absolute;
+    left:0;
+    top:0;
+    height:2rem;
+    width:2rem;
+    cursor:pointer;
+  }
