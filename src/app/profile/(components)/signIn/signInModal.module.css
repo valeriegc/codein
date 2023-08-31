@@ -50,3 +50,38 @@
     margin-top:1rem;
     margin-bottom:0.5rem;
   }
+  .form{
+    display:flex;
+    flex-direction:column;
+    text-align: left;
+  }
+  .label{
+    align-self: flex-starts;
+    font-size:0.75rem;
+  }
+  .input {
+    border: solid 0.5px rgba(77, 31, 113);
+    color:rgba(77, 31, 113);
+    margin-bottom: 0.75rem;
+    margin-top:0.25rem;
+    border-radius:5px;
+    padding:0.3rem;
+  }
+  .input::hover{
+    border: solid 2px rgba(77, 31, 113)
+
+  }
+  .input::focus{
+    border: solid 1px rgba(77, 31, 113)
+  }
+  .topBox{
+    position:relative
+  }
+  .backIcon {
+    position:absolute;
+    left:0;
+    top:0;
+    height:2rem;
+    width:2rem;
+    cursor:pointer;
+  }

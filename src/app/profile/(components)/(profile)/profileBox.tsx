@@ -6,6 +6,7 @@ import Modal from '../(proPicModal)/modal'
 import { Dispatch, SetStateAction, useContext, useState } from 'react'
 import { EditProfileContext } from '../../profileContext'
 import { TextModal } from '../(textModal)/textModal'
+import { getSession } from 'next-auth/react'
 
 export interface ImageChange {
   handleImg: Dispatch<SetStateAction<string>>
@@ -47,7 +48,7 @@ export default function ProfileBox() {
         )}
         {bgImage !== '' && <img src={bgImage} className={styles.bgPic}></img>}
         <div className={styles.picWrap}>
-          <img className={styles.userPhoto} src={profileImage}></img>
+          <img className={styles.userPhoto} src={session.user?.image}></img>
           {profileImage == '' && (
             <div>
               <div className={styles.personHead}></div>
