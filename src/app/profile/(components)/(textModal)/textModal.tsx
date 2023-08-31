@@ -1,9 +1,14 @@
 import styles from "./TextModal.module.css"
-import React, { ChangeEvent, MouseEvent, useContext, useState } from "react";
+import React, { ChangeEvent, MouseEvent, useContext, useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { UserInfoContext } from "../../page";
 
 export function TextModal({onClose}){
+
+    useEffect(()=>{
+        document.body.style.overflow="hidden"
+        return () => document.body.style.overflow="unset"
+    },[])    
 
     const {userInfo, setUserInfo} = useContext(UserInfoContext)
     

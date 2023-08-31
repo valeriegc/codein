@@ -1,11 +1,16 @@
 'use client'
-import React, { ChangeEvent, MouseEvent } from 'react'
+import React, { ChangeEvent, MouseEvent, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import styles from './Modal.module.css'
 import { useState } from 'react'
 import { imageChange } from '../(profile)/profileBox'
 
 export default function Modal({ onClose, handleImg }: imageChange) {
+
+  useEffect(()=>{
+    document.body.style.overflow="hidden"
+    return () => document.body.style.overflow="unset"
+},[])    
   const handleClose = (
     e: MouseEvent<HTMLImageElement> | MouseEvent<HTMLButtonElement>,
   ) => {

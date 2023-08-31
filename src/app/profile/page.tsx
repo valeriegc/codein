@@ -8,6 +8,7 @@ import CvBox from './(components)/(cv)/cvBox'
 import EmploymentCard from './(components)/(cv)/employmentCard'
 import React, { useState } from 'react'
 import { EditProfileContext } from './profileContext'
+import SignInModal from './(components)/signIn/signinModal'
 
 export let userObject = {
   Name: 'Valerie Knape',
@@ -50,9 +51,11 @@ export default function ProfilePage() {
       setButtonText('Allow edit')
     }
   }
+
   return (
     <EditProfileContext.Provider value={editEnable}>
       <UserInfoContext.Provider value={value}>
+        <SignInModal></SignInModal>
         <div className={styles.pageFrame}>
           <button onClick={editDemo}>{buttonText}</button>
           <NavBar></NavBar>

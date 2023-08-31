@@ -1,7 +1,7 @@
 import '../../globals.css'
 import type { Metadata } from 'next'
 import { Raleway } from 'next/font/google'
-import AuthProvider from './Auth'
+import AuthProvider from './AuthProvider'
 
 export const metadata: Metadata = {
   title: 'Codein',
