@@ -1,108 +1,110 @@
-.pageFrame{
-    padding:2rem;
-    background-color: rgb(232, 227, 253);
+.pageFrame {
+  padding: 2rem;
+  background-color: rgb(232, 227, 253);
 }
 .container {
-    display:flex;
-    flex-direction: row;
-    font-family:"Raleway";
-    color: rgb(77, 31, 113);
-    justify-content: center;
-    gap:2rem;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Raleway';
+  color: rgb(77, 31, 113);
+  justify-content: center;
+  gap: 2rem;
 }
 
-.profileBox{
-    background-color: white;
-    height: 25rem;
-    overflow:hidden;
-    width:45rem;
-    border-radius:10px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-    margin-bottom:2rem;
-    position:relative;
+.profileBox {
+  background-color: white;
+  height: 25rem;
+  overflow: hidden;
+  width: 45rem;
+  border-radius: 10px;
+  box-shadow:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  margin-bottom: 2rem;
+  position: relative;
 }
 
 .bgPic {
-    background-color: rgba(77, 31, 113);
-    height: 10rem;
-    width:45rem;
-    position:relative;
+  background-color: rgba(77, 31, 113);
+  height: 10rem;
+  width: 45rem;
+  position: relative;
 }
 .picWrap {
-    position: absolute;
-    left:2rem;
-    top:5rem;
-    height:7rem;
-    width:7rem;
-    border: 8px white solid;
-    border-radius: 100%;
-    background-color: lightgray;
-    overflow:hidden;
+  position: absolute;
+  left: 2rem;
+  top: 5rem;
+  height: 7rem;
+  width: 7rem;
+  border: 8px white solid;
+  border-radius: 100%;
+  background-color: lightgray;
+  overflow: hidden;
 }
-.personHead{
-    position:absolute;
-    border-radius:100%;
-    background-color: white;
-    height: 3rem;
-    width: 3rem;
-    top:2rem;
-    left:2rem;
+.personHead {
+  position: absolute;
+  border-radius: 100%;
+  background-color: white;
+  height: 3rem;
+  width: 3rem;
+  top: 2rem;
+  left: 2rem;
 }
-.personBody{
-    position:absolute;
-    width:8rem;
-    height:3rem;
-    background-color:white;
-    border-radius:100%;
-    top:5rem;
+.personBody {
+  position: absolute;
+  width: 8rem;
+  height: 3rem;
+  background-color: white;
+  border-radius: 100%;
+  top: 5rem;
 }
-.name{
-    color:white;
-    position:absolute;
-    left:12rem;
-    top:5.5rem;
-    font-weight: bold;
+.name {
+  color: white;
+  position: absolute;
+  left: 12rem;
+  top: 5.5rem;
+  font-weight: bold;
 }
-.personalInfo{
-    margin-left: 3rem;
-    margin-top: 4rem;
-    font-weight:bold;
+.personalInfo {
+  margin-left: 3rem;
+  margin-top: 4rem;
+  font-weight: bold;
 }
-.languages{
-    font-weight: 400;
-    color:grey
+.languages {
+  font-weight: 400;
+  color: grey;
 }
-.interests{
-    font-style: italic;
-    font-weight: 300;
-    color:grey
+.interests {
+  font-style: italic;
+  font-weight: 300;
+  color: grey;
 }
-.editImage{
-    position:absolute;
-    height:2rem;
-    width:2rem;
-    left:10rem;
-    top: 11rem;
-    cursor:pointer;
+.editImage {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  left: 10rem;
+  top: 11rem;
+  cursor: pointer;
 }
 .editText {
-    position:absolute;
-    height:2rem;
-    width: 2rem;
-    right:0.75rem;
-    top:14rem;
-    cursor: pointer;
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  right: 0.75rem;
+  top: 14rem;
+  cursor: pointer;
 }
-.editBgImage{
-    position:absolute;
-    height:2rem;
-    width:2rem;
-    cursor:pointer;
-    right:0.75rem;
-    top:7.5rem;
-    z-index:5;
+.editBgImage {
+  position: absolute;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  right: 0.75rem;
+  top: 7.5rem;
+  z-index: 5;
 }
-.userPhoto{
-    height:7rem;
-    width:7rem;
+.userPhoto {
+  height: 7rem;
+  width: 7rem;
 }
