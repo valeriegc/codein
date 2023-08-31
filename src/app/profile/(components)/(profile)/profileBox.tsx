@@ -48,7 +48,7 @@ export default function ProfileBox() {
         )}
         {bgImage !== '' && <img src={bgImage} className={styles.bgPic}></img>}
         <div className={styles.picWrap}>
-          <img className={styles.userPhoto} src={session.user?.image}></img>
+          <img className={styles.userPhoto} src={profileImage}></img>
           {profileImage == '' && (
             <div>
               <div className={styles.personHead}></div>

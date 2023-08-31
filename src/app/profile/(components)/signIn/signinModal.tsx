@@ -1,11 +1,15 @@
-import { SignInBtn } from "./authButtons"
+import { SignInBtn, SignUpBtn } from "./authButtons"
 import styles from "./signInModal.module.css"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import ReactDOM from 'react-dom'
 
 export default function SignInModal(){
 
 const [create, setCreate] = useState(false)
+useEffect(()=>{
+    document.body.style.overflow="hidden"
+    return () => document.body.style.overflow="unset"
+},[])
 
 const ModalContent = (
         <div className={styles.background}>
@@ -14,11 +18,10 @@ const ModalContent = (
                 <div>
                 <img src="signin.png" className={styles.icon}></img>
                 <h2 className={styles.headline}>Sign in today and start connecting.</h2></div>
-                <p>You can sign in easily with one of the providers below
-                    or by creating an account with name and password.
-                </p>
-                <button className={styles.btnCreateAcc} onClick={()=>setCreate(true)}>Create an account</button>
+                <input name="currentEmail"className={styles.inputSI} placeholder="Email"></input>
+                <input className={styles.inputSI} name="currentPassword" placeholder="Password"></input>
                 <SignInBtn></SignInBtn>
+                <button onClick={()=> setCreate(true)} className={styles.btnCreateAcc}>Dont have an account yet?</button>
             </div>}
             { create &&
         <div className={styles.modal}>
@@ -26,7 +29,7 @@ const ModalContent = (
                 <img src="back.png" className={styles.backIcon} onClick={()=> setCreate(false)}></img>
                 <img src="create.png" className={styles.icon}></img>
                 <h2 className={styles.headline}>Create an account</h2></div>
-                <p>Fill in your Name, Email, Password and confirmation password.</p>
+                <p>Fill in your Name, Email, Password and confirmation password. You can also directly register via Facebook, Github or Google.</p>
                 <form className={styles.form}>
                     <label className={styles.label}>First and last name</label>
                     <input name="name" className={styles.input}></input>
@@ -36,7 +39,8 @@ const ModalContent = (
                     <input name="password" type="password" className={styles.input}></input>
                     <label className={styles.label}>Confirmation Password</label>
                     <input name="confirmPass" className={styles.input}></input>
-                    <button className={styles.btnCreateAcc}>Register</button>
+                    <button className={styles.btnRegister}>Register</button>
+                    <SignUpBtn></SignUpBtn>
                 </form>
             </div>
             }
