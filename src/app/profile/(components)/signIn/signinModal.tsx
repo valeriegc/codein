@@ -8,7 +8,7 @@ export default function SignInModal(){
 const [create, setCreate] = useState(false)
 useEffect(()=>{
     document.body.style.overflow="hidden"
-    return () => document.body.style.overflow="unset"
+    return () => {document.body.style.overflow="unset"}
 },[])
 
 const ModalContent = (
@@ -30,6 +30,7 @@ const ModalContent = (
                 <img src="create.png" className={styles.icon}></img>
                 <h2 className={styles.headline}>Create an account</h2></div>
                 <p>Fill in your Name, Email, Password and confirmation password. You can also directly register via Facebook, Github or Google.</p>
+                <SignUpBtn></SignUpBtn>
                 <form className={styles.form}>
                     <label className={styles.label}>First and last name</label>
                     <input name="name" className={styles.input}></input>
@@ -39,8 +40,7 @@ const ModalContent = (
                     <input name="password" type="password" className={styles.input}></input>
                     <label className={styles.label}>Confirmation Password</label>
                     <input name="confirmPass" className={styles.input}></input>
-                    <button className={styles.btnRegister}>Register</button>
-                    <SignUpBtn></SignUpBtn>
+                    <button className={styles.btnRegister}>Register with email and password</button>
                 </form>
             </div>
             }
