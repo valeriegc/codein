@@ -14,21 +14,9 @@ export function SignInBtn() {
     if (status==="authenticated"){
         <Link href={"/profile"}></Link>
     }
-    return (<button onClick={()=>signIn()} className={styles.btnProviders} >Sign in with Facebook, Google or Github</button>)
+    return (<button onClick={()=>signIn()} className={styles.btnProviders} >Sign in</button>)
 }
 
 export function SignOutBtn(){
     return <button onClick={()=> signOut()}>Sign out</button>
-}
-export function SignUpBtn() {
-    const {data:session, status} = useSession()
-
-    if (status==="loading") {
-        return <>...</>
-    }
-
-    if (status==="authenticated"){
-        <Link href={"/profile"}></Link>
-    }
-    return (<button onClick={()=>signIn()} className={styles.btnProvidersReg} >Register with Facebook, Google or Github</button>)
 }
