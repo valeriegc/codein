@@ -121,11 +121,18 @@
   padding: 0.75rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: right;
   gap: 1rem;
   margin-bottom: 0.25rem;
 }
 .btnLogo {
   height: 1.5rem;
   width: 1.5rem;
+  margin-right:7rem;
+  margin-left:1rem;
+}
+.btnTxt {
+  width: 10rem;
+  overflow:hidden;
+  text-align:left;
 }

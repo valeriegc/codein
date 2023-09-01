@@ -19,8 +19,8 @@ export default function SignInProviders() {
             <button
               className={styles.provBtn}
               onClick={() => signIn(provider.id)}
-            >
-              Sign in with {provider.name}{' '}
+            ><div className={styles.btnTxt}>
+              Sign in with {provider.name}{' '}</div>
               <img
                 className={styles.btnLogo}
                 src={
