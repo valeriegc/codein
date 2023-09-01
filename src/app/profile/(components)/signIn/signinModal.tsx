@@ -1,7 +1,9 @@
+import ProviderSignIn from "@/app/resources/page"
 import { SignInBtn, SignUpBtn } from "./authButtons"
 import styles from "./signInModal.module.css"
 import React, { useEffect, useState } from "react"
 import ReactDOM from 'react-dom'
+import SignInProviders from "./providers"
 
 export default function SignInModal(){
 
@@ -21,6 +23,7 @@ const ModalContent = (
                 <input name="currentEmail"className={styles.inputSI} placeholder="Email"></input>
                 <input className={styles.inputSI} name="currentPassword" placeholder="Password"></input>
                 <SignInBtn></SignInBtn>
+                <SignInProviders></SignInProviders>
                 <button onClick={()=> setCreate(true)} className={styles.btnCreateAcc}>Dont have an account yet?</button>
             </div>}
             { create &&
@@ -30,7 +33,7 @@ const ModalContent = (
                 <img src="create.png" className={styles.icon}></img>
                 <h2 className={styles.headline}>Create an account</h2></div>
                 <p>Fill in your Name, Email, Password and confirmation password. You can also directly register via Facebook, Github or Google.</p>
-                <SignUpBtn></SignUpBtn>
+                <SignInProviders></SignInProviders>
                 <form className={styles.form}>
                     <label className={styles.label}>First and last name</label>
                     <input name="name" className={styles.input}></input>
