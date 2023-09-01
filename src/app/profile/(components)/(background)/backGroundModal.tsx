@@ -1,19 +1,13 @@
 import styles from './bgModal.module.css'
-import React, {
-  ChangeEvent,
-  MouseEvent,
-  useEffect,
-  useState,
-} from 'react'
+import React, { ChangeEvent, MouseEvent, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import { BGimageChange } from '../(profile)/profileBox'
 
 export default function BGModal({ handleBGImg, onClose }: BGimageChange) {
-
-  useEffect(()=>{
-    document.body.style.overflow="hidden"
-    return () => document.body.style.overflow="unset"
-},[])
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => (document.body.style.overflow = 'unset')
+  }, [])
 
   const handleClose = (
     e: MouseEvent<HTMLImageElement> | MouseEvent<HTMLButtonElement>,
