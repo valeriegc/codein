@@ -72,7 +72,7 @@ export default function SignInModal() {
               className={styles.input}
             ></input>
             <label className={styles.label}>Confirmation Password</label>
-            <input name="confirmPass" className={styles.input}></input>
+            <input name="confirmPass" type="password" className={styles.input}></input>
             <button className={styles.btnRegister}>
               Register with email and password
             </button>
