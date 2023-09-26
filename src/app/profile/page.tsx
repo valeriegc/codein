@@ -9,6 +9,8 @@ import EmploymentCard from './(components)/(cv)/employmentCard'
 import React, { useState } from 'react'
 import { EditProfileContext } from './profileContext'
 import SignInModal from './(components)/signIn/signinModal'
+import { useSession } from 'next-auth/react'
+
 
 export let userObject = {
   Name: 'Valerie Knape',
@@ -36,6 +38,7 @@ export const UserInfoContext = React.createContext({
 })
 
 export default function ProfilePage() {
+  const {data: session, status} = useSession()
   const [userInfo, setUserInfo] = useState(userObject)
   const value = { userInfo, setUserInfo }
 
@@ -55,7 +58,8 @@ export default function ProfilePage() {
   return (
     <EditProfileContext.Provider value={editEnable}>
       <UserInfoContext.Provider value={value}>
-        <SignInModal></SignInModal>
+        {status !== "authenticated" &&
+        <SignInModal></SignInModal>}
         <div className={styles.pageFrame}>
           <button onClick={editDemo}>{buttonText}</button>
           <NavBar></NavBar>
