@@ -14,7 +14,7 @@ export function SignInBtn() {
     ;<Link href={'/profile'}></Link>
   }
   return (
-    <button onClick={() => signIn()} className={styles.btnProviders}>
+    <button  className={styles.btnProviders}>
       Sign in
     </button>
   )

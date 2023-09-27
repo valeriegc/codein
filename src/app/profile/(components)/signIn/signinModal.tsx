@@ -1,5 +1,4 @@
-import ProviderSignIn from '@/app/resources/page'
-import { SignInBtn, SignUpBtn } from './authButtons'
+import { SignInBtn} from './authButtons'
 import styles from './signInModal.module.css'
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
@@ -33,6 +32,7 @@ export default function SignInModal() {
             className={styles.inputSI}
             name="currentPassword"
             placeholder="Password"
+            type="password"
           ></input>
           <SignInBtn></SignInBtn>
           <SignInProviders></SignInProviders>
