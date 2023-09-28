@@ -1,12 +1,5 @@
-import { Prisma, User } from '@prisma/client'
+import { Prisma } from '@prisma/client'
 import { prisma } from '../../../../../prisma/prisma'
-import { NextResponse } from 'next/server'
-
-type ResponseData =
-  | {
-      message: string
-    }
-  | User
 
 export const POST = async (req: Request) => {
   //add error handling later

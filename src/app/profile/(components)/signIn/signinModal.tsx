@@ -1,8 +1,10 @@
+"use client"
 import { SignInBtn} from './authButtons'
 import styles from './signInModal.module.css'
 import React, { FormEvent, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import SignInProviders from './providers'
+
 
 export default function SignInModal() {
   const [create, setCreate] = useState(false)
@@ -19,7 +21,6 @@ export default function SignInModal() {
 
     try {
       const formData = new FormData(event.currentTarget)
-      console.log(formData)
       const response = await fetch("/api/users/signup", {
         method: "POST",
         body: formData
