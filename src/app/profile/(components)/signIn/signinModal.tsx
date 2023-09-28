@@ -1,13 +1,14 @@
-"use client"
-import { SignInBtn} from './authButtons'
+'use client'
 import styles from './signInModal.module.css'
 import React, { FormEvent, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import SignInProviders from './providers'
+import { signIn } from 'next-auth/react'
 
 
 export default function SignInModal() {
   const [create, setCreate] = useState(false)
+
   useEffect(() => {
     document.body.style.overflow = 'hidden'
     return () => {
@@ -15,9 +16,19 @@ export default function SignInModal() {
     }
   }, [])
 
+  const handleSignin = async(event:FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    
+      const formData = new FormData(event.currentTarget)
+      console.log(formData)
+      const email = formData.get("email")?.toString()
+      const password = formData.get("password")?.toString()
+      console.log("Email:", email, "password" , password)
+      signIn("credentials", {redirect:false,email,password})
+  }
+
   const handleCreate = async(event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    console.log("In handle create")
 
     try {
       const formData = new FormData(event.currentTarget)
@@ -44,18 +55,22 @@ export default function SignInModal() {
               Sign in today and start connecting.
             </h2>
           </div>
+          <form onSubmit={handleSignin} className={styles.form}>
           <input
-            name="currentEmail"
+            name="email"
             className={styles.inputSI}
             placeholder="Email"
           ></input>
           <input
             className={styles.inputSI}
-            name="currentPassword"
+            name="password"
             placeholder="Password"
             type="password"
           ></input>
-          <SignInBtn></SignInBtn>
+             <button type="submit"  className={styles.btnProviders}>
+      Sign in
+    </button>
+          </form>
           <SignInProviders></SignInProviders>
           <button
             onClick={() => setCreate(true)}

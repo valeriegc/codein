@@ -60,9 +60,9 @@ model User {
   bio           String?      @db.Text
   age           Int?
   email         String?      @unique
-  password      String
+  password      String?
   connections   Connection[]
-  employer      String
+  employer      String?
   stack         String[]
   languages     String[]
   interests     String[]

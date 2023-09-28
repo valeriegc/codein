@@ -1,20 +1,22 @@
-import { getProviders, signIn } from 'next-auth/react'
+import { ClientSafeProvider, getProviders, signIn } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import styles from './signInModal.module.css'
 
 export default function SignInProviders() {
-  const [providers, setProviders] = useState(null)
+  const [providers, setProviders] = useState<null | ClientSafeProvider[]>(null)
 
   useEffect(() => {
     ;(async () => {
       const res = await getProviders()
-      setProviders(res)
+      if (!res) return
+      const finalRes = Object.values(res).filter((r) => r.name !== "Credentials")
+      setProviders(finalRes)
     })()
   }, [])
   return (
     <>
       {providers &&
-        Object.values(providers).map((provider) => (
+        providers.map((provider) => (
           <div key={provider.name}>
             <button
               className={styles.provBtn}
