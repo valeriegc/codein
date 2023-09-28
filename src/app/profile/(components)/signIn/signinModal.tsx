@@ -1,6 +1,6 @@
 import { SignInBtn} from './authButtons'
 import styles from './signInModal.module.css'
-import React, { useEffect, useState } from 'react'
+import React, { FormEvent, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import SignInProviders from './providers'
 
@@ -12,6 +12,26 @@ export default function SignInModal() {
       document.body.style.overflow = 'unset'
     }
   }, [])
+
+  const handleCreate = async(event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    console.log("In handle create")
+
+    try {
+      const formData = new FormData(event.currentTarget)
+      console.log(formData)
+      const response = await fetch("/api/users/signup", {
+        method: "POST",
+        body: formData
+      })
+
+    const data = await response.json()
+    }
+    catch (error) {
+      console.error(error)
+    }
+
+  }
 
   const ModalContent = (
     <div className={styles.background}>
@@ -60,7 +80,7 @@ export default function SignInModal() {
             can also directly register via Facebook, Github or Google.
           </p>
           <SignInProviders></SignInProviders>
-          <form className={styles.form}>
+          <form onSubmit={handleCreate} className={styles.form}>
             <label className={styles.label}>First and last name</label>
             <input name="name" className={styles.input}></input>
             <label className={styles.label}>Email address</label>
@@ -73,7 +93,7 @@ export default function SignInModal() {
             ></input>
             <label className={styles.label}>Confirmation Password</label>
             <input name="confirmPass" type="password" className={styles.input}></input>
-            <button className={styles.btnRegister}>
+            <button type="submit" className={styles.btnRegister}>
               Register with email and password
             </button>
           </form>

@@ -1,14 +1,20 @@
+import { NextApiRequest, NextApiResponse } from 'next'
 import { prisma } from '../../../../../prisma/prisma'
+import { User } from '@prisma/client'
+import { type } from 'os'
+type ResponseData =
+  | {
+      message: string
+    }
+  | Partial<User>
 
-export const handle = async (req, res) => {
-  if (req.method === 'POST') {
-    await handleUserLogin(req, res)
-  } else {
-    return res.status(405)
+export const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse<ResponseData>,
+) => {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ message: 'Method Not allowed' })
   }
-}
-
-const handleUserLogin = async (req, res) => {
   const { email, password } = req.body
   if (!email || !password) {
     return res.status(400).json({ message: 'invalid inputs' })
@@ -30,19 +36,15 @@ const handleUserLogin = async (req, res) => {
       },
     })
     if (user && user.password == password) {
-      return res.status(200).json(remove(user, password))
+      //@ts-ignore
+      delete user.password
+      return res.status(200).json(user)
       // need to find a method to exclude the password!
     } else {
       return res.status(401).json({ message: 'invalid credentials' })
     }
   } catch (e) {
-    throw new Error(e)
+    //@ts-ignore
+    return res.status(500).json({ message: e })
   }
-}
-
-const remove = (user, keys) => {
-  for (let key of keys) {
-    delete user[key]
-  }
-  return user
 }
