@@ -9,6 +9,7 @@ import { credentialSignin } from './credentials'
 
 export const authOptions: NextAuthOptions = {
   debug: true,
+  session: { strategy: 'jwt' },
   adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
@@ -26,37 +27,6 @@ export const authOptions: NextAuthOptions = {
     credentialSignin,
   ],
 }
-
-/**secret: process.env.NEXTAUTH_SECRET,
-  session: { strategy: 'jwt', maxAge: 24 * 60 * 60 },
-
-  jwt: {
-    secret: process.env.NEXTAUTH_SECRET,
-    maxAge: 60 * 60 * 24 * 30,
-    encryption: true,
-  },
-
-  pages: {
-    signIn: '/login',
-    signOut: '/login',
-    error: '/login',
-  },
-
-  callbacks: {
-    async session(session, user, token) {
-      if (user !== null) {
-        session.user = user
-      }
-      return await session
-    },
-
-    async jwt({ token, user }) {
-      return await token
-    },
-  },
-}
-
-export default (req, res) => NextAuth(req, res, options)**/
 
 const handler = NextAuth(authOptions)
 export { handler as GET, handler as POST }

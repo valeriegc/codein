@@ -7,15 +7,13 @@ export const credentialSignin = CredentialsProvider({
     email: { label: 'Email', type: 'email' },
     password: { label: 'Password', type: 'password' },
   },
+
   async authorize(credentials, req) {
     if (!credentials) throw Error('Val is the best')
     const userCredentials = {
       email: credentials.email,
       password: credentials.password,
     }
-    console.log(req.body)
-    console.log(credentials, 'CREDENTIALS HEREE')
-    console.log('we are above fetch')
 
     try {
       const res = await fetch('http://localhost:3000/api/auth/getUser', {
@@ -26,7 +24,6 @@ export const credentialSignin = CredentialsProvider({
         },
       })
       const user = await res.json()
-      console.log(user)
       if (user) {
         return user
       } else {

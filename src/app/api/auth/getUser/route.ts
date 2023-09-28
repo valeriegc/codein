@@ -2,7 +2,6 @@ import { prisma } from '../../../../../prisma/prisma'
 
 export const POST = async (req: Request) => {
   const { email, password } = await req.json()
-  console.log(email, password)
   if (!email || !password) {
     return new Response('Missing login data', { status: 400 })
   }
@@ -22,11 +21,9 @@ export const POST = async (req: Request) => {
         connections: true,
       },
     })
-    console.log(user)
     if (user && user.password == password) {
       //@ts-ignore
       delete user.password
-      console.log('found user')
       return new Response(JSON.stringify(user), { status: 200 })
     } else {
       console.log('wrong password, oh no')
