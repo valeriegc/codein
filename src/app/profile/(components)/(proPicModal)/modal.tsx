@@ -6,11 +6,10 @@ import { useState } from 'react'
 import { imageChange } from '../(profile)/profileBox'
 
 export default function Modal({ onClose, handleImg }: imageChange) {
-
-  useEffect(()=>{
-    document.body.style.overflow="hidden"
-    return () => document.body.style.overflow="unset"
-},[])    
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => (document.body.style.overflow = 'unset')
+  }, [])
   const handleClose = (
     e: MouseEvent<HTMLImageElement> | MouseEvent<HTMLButtonElement>,
   ) => {
